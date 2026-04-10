@@ -8,6 +8,7 @@ CORS(app)
 PANDASCORE_TOKEN = "5Hxjg4mKCgSFUSudQgPhCz3srNh4v44drWouXsWJ958SHmlNUo8"
 HEADERS = {"Authorization": f"Bearer {PANDASCORE_TOKEN}"}
 
+@app.route('/panda', defaults={'endpoint': ''})
 @app.route('/panda/<path:endpoint>')
 def pandascore_proxy(endpoint):
     try:
