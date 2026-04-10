@@ -11,7 +11,7 @@ scraper = cloudscraper.create_scraper(
 )
 
 def parse_hltv_matches(html):
-    soup = BeautifulSoup(html, 'html5lib')
+    soup = BeautifulSoup(html, 'html.parser')
     matches = []
     for match in soup.select('.upcomingMatch')[:10]:
         try:
